@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="library_book_action" model="ir.actions.act_window">
+        <field name="name">Book</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="domain">[]</field>
+        <field name="context">{}</field> -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Let's Add a new Book to our Library...
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="user_group" model="res.groups">
+        <field name="name">Library/User Group</field>
+        <!-- <field name="category_id" ref="library_app.module_pos_enhancement"/> -->
+    </record>
+    
+    <record id="manager_group" model="res.groups">
+        <field name="name">Library/Manager Group</field>
+        <!-- <field name="category_id" ref="library_app.module_pos_enhancement"/> -->
+    </record>
+
+</odoo>
