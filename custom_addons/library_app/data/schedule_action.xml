@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ir_cron_scheduler_drop_record_in_placement" model="ir.cron">
+        <field name="name">Publish Left Out</field>
+        <field name="model_id" ref="model_library_book"/>
+        <field name="state">code</field>
+        <field name="code">
+for rec in records:
+    if not rec.is_published:
+        rec.action_publish()
+        </field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field eval="False" name="doall"/>
+    </record>
+
+</odoo>

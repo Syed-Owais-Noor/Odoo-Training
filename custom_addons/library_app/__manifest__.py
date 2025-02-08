@@ -6,10 +6,14 @@
     'website': 'https://bytesnode.com/',
     'license': 'LGPL-3',
     'category': 'BytesNode/Library',
-    'depends': [],
+    'depends': [
+        'mail',
+    ],
     'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
+        'data/server_action.xml',
+        'data/schedule_action.xml',
         'views/search.xml',
         'views/form.xml',
         'views/tree.xml',

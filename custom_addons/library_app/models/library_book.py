@@ -1,9 +1,16 @@
 from odoo import models, fields, api, exceptions
 
 
+state_selection = [
+    ('draft', 'Draft'),
+    ('publish', 'Publish'),
+]
+
+
 class LibraryBook(models.Model):
     _name = 'library.book'
     _description = "Library Book"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
 
     # Enabling tracking so we can keep a record of values that a user changes of these fields
@@ -23,3 +30,13 @@ class LibraryBook(models.Model):
     auther_ids = fields.Many2many('res.partner', string="Author IDs", tracking=True)
 
     active = fields.Boolean("Active", default=True)
+
+    state = fields.Selection(selection=state_selection, string="Status", tracking=True, default='draft')
+
+    is_published = fields.Boolean('Is Published', tracking=True)
+
+
+    def action_publish(self):
+        self.state = 'publish'
+
+        self.is_published = True
